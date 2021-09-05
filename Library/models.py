@@ -12,5 +12,13 @@ class Author:
     
     
     #to add later
-    #awards  
-    #languages 
+        #awards  
+        #languages 
+
+class Genre:
+    title: models.CharField(max_length=100)
+    
+    #to add later
+        #relatedGenre 
+
+
