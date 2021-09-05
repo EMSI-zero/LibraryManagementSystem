@@ -4,9 +4,22 @@ from .models import Author, Genre, Book
 
 #Register Models
 
-admin.site.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name' , 'last_name', 'country')
+    list_filter = ('last_name',)
+
+admin.site.register(Author, AuthorAdmin)
+
+
+
 admin.site.register(Genre)
-admin.site.register(Book)
+
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title' , 'author')
+    list_filter = ('author',)
+
+admin.site.register(Book , BookAdmin)
 
 
 
