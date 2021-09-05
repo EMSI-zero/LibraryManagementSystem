@@ -36,9 +36,9 @@ class Genre(models.Model):
 # Model Representing books
 class Book(models.Model):
     title= models.TextField()
-    author= models.ForeignKey(Author , on_delete=models.CASCADE)
+    author= models.ForeignKey(Author , related_name='books', on_delete=models.CASCADE)
     publishDate= models.DateField()
-    genre = models.ManyToManyField(Genre , blank=True , null=True)
+    genre = models.ManyToManyField(Genre , related_name='genres', blank=True , null=True)
     onLoan = models.BooleanField(default=False)
 
     
