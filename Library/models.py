@@ -16,6 +16,9 @@ class Author(models.Model):
         #awards  
         #languages 
 
+        
+    def __str__(self) -> str:
+        return self.name + ' ' + self.last_name
 
 
 # Model Representing Genre
@@ -24,6 +27,9 @@ class Genre(models.Model):
     
     #to add later
         #relatedGenre 
+
+    def __str__(self) -> str:
+       return self.title
 
 
 
@@ -35,6 +41,10 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre , blank=True , null=True)
     onLoan = models.BooleanField(default=False)
 
+    
     #to add later
         #publisher
         #publishCode
+
+    def __str__(self) -> str:
+        return self.title
