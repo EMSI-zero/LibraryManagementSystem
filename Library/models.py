@@ -4,7 +4,7 @@ from django.db.models.deletion import CASCADE
 
 
 # Model Representing Author
-class Author:
+class Author(models.Model):
     
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -19,7 +19,7 @@ class Author:
 
 
 # Model Representing Genre
-class Genre:
+class Genre(models.Model):
     title= models.CharField(max_length=100)
     
     #to add later
@@ -28,7 +28,7 @@ class Genre:
 
 
 # Model Representing books
-class Book:
+class Book(models.Model):
     title= models.TextField()
     author= models.ForeignKey(Author , on_delete=models.CASCADE)
     publishDate= models.DateField()
