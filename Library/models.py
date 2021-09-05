@@ -33,6 +33,7 @@ class Book:
     author= models.ForeignKey(Author , on_delete=models.CASCADE)
     publishDate= models.DateField()
     genre = models.ManyToManyField(Genre , blank=True , null=True)
+    onLoan = models.BinaryField(default=False)
 
     #to add later
         #publisher
