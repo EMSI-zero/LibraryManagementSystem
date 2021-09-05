@@ -44,6 +44,13 @@ def bookList(request):
     return Response(serializer.data)
 
 
+#book details
+@api_view(['GET'])
+def bookDetail(request,pk):
+    books = Book.objects.get(id=pk)
+    serializer = BookSerializer(books , many=False)
+    return Response(serializer.data)
+
 
 #Genre Views
 
