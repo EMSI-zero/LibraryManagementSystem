@@ -9,5 +9,6 @@ urlpatterns = [
     path('author-list' , views.authorList , name="author-list"),
     path('book-list' , views.bookList , name="book-list"),
     path('genre-list' , views.genreList , name="genre-list"),
+    path('author-list/<str:pk>/' , views.authorDetail , name="author"),
 
 ]

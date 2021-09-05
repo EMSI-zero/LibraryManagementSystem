@@ -1,3 +1,4 @@
+from re import search
 from Library.Serializers import AuthorSerializer, BookSerializer, GenreSerializer
 from django.shortcuts import render
 
@@ -22,6 +23,15 @@ def authorList(request):
     authors = Author.objects.all()
     serializer = AuthorSerializer(authors , many=True)
     return Response(serializer.data)
+
+#author details
+@api_view(['GET'])
+def authorDetail(request,pk):
+    authors = Author.objects.get(id=pk)
+    serializer = AuthorSerializer(authors , many=False)
+    response = Response(serializer.data)
+    return response
+
 
 
 #Book Views
