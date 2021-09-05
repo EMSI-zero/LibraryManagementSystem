@@ -7,5 +7,7 @@ from . import views #import views file to use views in url patterns
 urlpatterns = [
     path('api/' , views.apiOverview), #domain/api
     path('author-list' , views.authorList , name="author-list"),
-    path('book-list' , views.bookList , name="book-list")
+    path('book-list' , views.bookList , name="book-list"),
+    path('genre-list' , views.genreList , name="genre-list"),
+
 ]

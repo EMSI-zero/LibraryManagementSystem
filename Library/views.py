@@ -1,4 +1,4 @@
-from Library.Serializers import AuthorSerializer, BookSerializer
+from Library.Serializers import AuthorSerializer, BookSerializer, GenreSerializer
 from django.shortcuts import render
 
 
@@ -33,5 +33,15 @@ def bookList(request):
     serializer = BookSerializer(books , many=True)
     return Response(serializer.data)
 
+
+
+#Genre Views
+
+#Genre list view. lists the Genre and responses using serializer.
+@api_view(['GET'])
+def genreList(request):
+    genres = Genre.objects.all()
+    serializer = GenreSerializer(genres , many=True)
+    return Response(serializer.data)
 
 
