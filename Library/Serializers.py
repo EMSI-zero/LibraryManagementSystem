@@ -1,5 +1,5 @@
 from django.db import models
-from rest_framwork import serializers
+from rest_framework import serializers
 from .models import Author, Genre , Book
 
 
