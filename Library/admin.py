@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Author, Genre, Book
-
+from .models.Author import Author
+from .models.Genre import Genre
+from .models.Book import Book
 
 #Register Models
 

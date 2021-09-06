@@ -7,8 +7,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 #Model imports
-from .models import Author, Genre, Book
-
+from .models.Author import Author
+from .models.Genre import Genre
+from .models.Book import Book
 
 @api_view(['GET'])
 def apiOverview(request):
