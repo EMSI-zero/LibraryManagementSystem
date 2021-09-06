@@ -6,7 +6,7 @@ from .models import Author, Genre, Book
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('name' , 'last_name', 'country')
-    list_filter = ('last_name',)
+    list_filter = ('last_name', 'country' ,)
 
 admin.site.register(Author, AuthorAdmin)
 
